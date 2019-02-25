@@ -1,0 +1,26 @@
+<h1>Pessoas</h1>
+<ul>
+{% for pessoa in object_list %}
+    <li><a href="/pessoas/detalhe_pessoa/{{pessoa.pk}}/" >{{pessoa}}</a></li>
+{% empty %}
+    <li>Sem Pessoas Cadastradas.</li>
+{% endfor %}
+</ul>
+
+<a href="/pessoas/cadastro_pessoa/" >Novo</a></li>
+
+{% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/pessoas/pessoas?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/pessoas/pessoas?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}

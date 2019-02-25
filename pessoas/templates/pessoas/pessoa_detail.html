@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhe Pessoa</title>
+</head>
+<body>
+<h1>{{object.nome}}</h1>
+<p>{{object.sobrenome}}</p>
+<p>{{object.idade}}</p>
+<p>{{data}}</p>
+
+<a href="/pessoas/update_pessoa/{{object.pk}}/">Editar</a>
+<a href="/pessoas/delete_pessoa/{{object.pk}}/">Delete</a>
+
+</body>
+</html>
